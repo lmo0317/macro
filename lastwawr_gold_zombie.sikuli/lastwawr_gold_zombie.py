@@ -11,7 +11,7 @@ IMG_CLOSE         = "1753892408517.png" # X 버튼
 #use 버튼 클릭
 def click_use_button():
     try:
-        matches = list(findAll(IMG_USE))
+        matches = list(findAll(Pattern(IMG_USE).similar(0.5)))
         count = len(matches)
         print(">> '사용' 버튼 개수: {count}")
         if count == 1:
@@ -30,30 +30,30 @@ def click_use_button():
 # 체력 회복 처리 함수
 def recover_if_needed():
     print(">> 체력 회복 시도")  # 호출 확인용
-    if exists(IMG_RECOVER):
+    if exists(Pattern(IMG_RECOVER).similar(0.5)):
         print(">> 체력 회복 버튼 발견")
-        click(IMG_RECOVER)
+        click(Pattern(IMG_RECOVER).similar(0.5))
         wait(1)
         click_use_button()        
-        click(IMG_CLOSE)
+        click(Pattern(IMG_CLOSE).similar(0.5))
         wait(1)
     else:
         print(">> 체력 회복 버튼 없음")
 
 while True:
     
-    click(Pattern(IMG_SPECIAL_EVENT).similar(0.7)) #특별 이벤트
+    click(Pattern(IMG_SPECIAL_EVENT).similar(0.5)) #특별 이벤트
     wait(1)
 
-    click(IMG_SEARCH_BUTTON) #검색
+    click(Pattern(IMG_SEARCH_BUTTON).similar(0.5)) #검색
     wait(1)
     
-    click(IMG_SWORD_ICON) #칼 그림
+    click(Pattern(IMG_SWORD_ICON).similar(0.5)) #칼 그림
     wait(1)
 
     recover_if_needed()  # 함수 호출     
     
-    click(IMG_DEPLOY) #출정
+    click(Pattern(IMG_DEPLOY).similar(0.5)) #출정
     wait(1)
     
-    wait(30)
+    wait(60)
