@@ -1,13 +1,12 @@
-from sikuli.Sikuli import *
 
-IMG_SPECIAL_EVENT = "1753891353891.png" # 특별 이벤트
-IMG_SEARCH_BUTTON = "1753891537862.png" # 검색
+
+IMG_SPECIAL_EVENT = "1753891924704.png" # 특별 이벤트
+IMG_SEARCH_BUTTON = "1753883199807.png" # 검색
 IMG_SWORD_ICON   = "1753883242089.png" # 칼그림
 IMG_DEPLOY       = "1753883300135.png" # 출정
 IMG_RECOVER      = "1753889415228.png" #체력 회복
 IMG_USE          = "1752424408616.png" # 사용
 IMG_CLOSE         = "1752424441815.png" # X 버튼
-
 
 
 #use 버튼 클릭
@@ -47,7 +46,7 @@ while True:
     click(Pattern(IMG_SPECIAL_EVENT).similar(0.7)) #특별 이벤트
     wait(1)
 
-    click(Pattern(IMG_SEARCH_BUTTON).similar(0.5)) #검색
+    click(IMG_SEARCH_BUTTON) #검색
     wait(1)
     
     click(IMG_SWORD_ICON) #칼 그림
