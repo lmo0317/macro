@@ -67,7 +67,9 @@ namespace LastWarMacro
 
         public bool Exists(string imagePath, float similarity = 0.7f)
         {
-            var pattern = Patterns.FromFile(imagePath, similarity);
+            var fullPath = GetFullPath(imagePath);
+
+            var pattern = Patterns.FromFile(fullPath, similarity);
             return _session.Exists(pattern);
         }
 

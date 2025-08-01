@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "EZ1fTpQ9HCjhs+8Jv/KlED/UDA9JuVFkosDCmGLNCckt1+OPyjZhXwFii0PbmOPYWzmDD9EiM5jKfcOERJ/NSg==",
+  "dgSpecHash": "Go+8fhonGD4=",
   "success": true,
-  "projectFilePath": "C:\\work\\git\\macro\\SikuliSharp\\LastWarMacro\\LastWarMacro.csproj",
+  "projectFilePath": "D:\\work\\dev\\macro\\SikuliSharp\\LastWarMacro\\LastWarMacro.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\LEE\\.nuget\\packages\\sikulisharp.netcore\\1.0.0\\sikulisharp.netcore.1.0.0.nupkg.sha512"
+    "C:\\Users\\lmo03\\.nuget\\packages\\sikulisharp.netcore\\1.0.0\\sikulisharp.netcore.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

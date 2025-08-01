@@ -46,6 +46,8 @@ while True:
         wait(1)
         click(Pattern(IMG_SWORD_ICON).similar(0.5))     # 칼 그림
         wait(1)
+
+        
         recover_if_needed()                             # 체력 회복
         click(Pattern(IMG_DEPLOY).similar(0.5))         # 출정
         wait(1)
