@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LastWarMacro
 {
@@ -43,6 +44,19 @@ namespace LastWarMacro
             return ImgPath + path;
         }
 
+        public void DragDrop()
+        {
+            var fromLocation = new Location(300, 400); // X, Y
+            var toLocation = new Location(100, 400);
+
+            _session.DragDrop(fromLocation, toLocation);
+        }
+
+        public void Click(Location location)
+        {
+            _session.Click(location);
+        }
+
         public void Click(string imagePath, float similarity = 0.7f)
         {
             var fullPath = GetFullPath(imagePath);
@@ -56,6 +70,7 @@ namespace LastWarMacro
             else
             {
                 Console.WriteLine($">> 이미지 없음: {fullPath}");
+                throw new Exception();
             }
         }
 
@@ -68,7 +83,6 @@ namespace LastWarMacro
         public bool Exists(string imagePath, float similarity = 0.7f)
         {
             var fullPath = GetFullPath(imagePath);
-
             var pattern = Patterns.FromFile(fullPath, similarity);
             return _session.Exists(pattern);
         }

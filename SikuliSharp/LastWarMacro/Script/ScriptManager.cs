@@ -9,12 +9,12 @@ namespace LastWarMacro.Script
 {
     public enum ScriptType
     {
-        GOLD_ZOMBIE
+        GOLD_ZOMBIE,
+        MISSION_FIND,
     }
 
     public class ScriptManager
     {
-
         private static ScriptManager _instance;
         private static readonly object _lock = new object();
 
@@ -38,13 +38,20 @@ namespace LastWarMacro.Script
 
         public void Run(ScriptType type)
         {
+            // 로그 출력 메소드
+            LogManager.Instance.WriteLog($"스크립트 시작: {type}");
+
             switch(type)
             {
                 case ScriptType.GOLD_ZOMBIE:
                     _script = new GoldZombieScript();
-                    _script.Run();
+                    break;
+                case ScriptType.MISSION_FIND:
+                    _script = new MissionFindScript();
                     break;
             }
+
+            _script.Run();
         }
 
         public void Stop()

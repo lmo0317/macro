@@ -17,6 +17,8 @@ namespace LastWarMacro
             //Console.WriteLine("TEST");
             //SikuliManager.Instance.Click("button1.png");
 
+            //ProcessManager.Instance.SetWindowPos();
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

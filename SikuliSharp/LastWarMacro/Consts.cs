@@ -15,5 +15,6 @@ namespace LastWarMacro
         public const string IMG_RECOVER = "1753892371144.png"; //체력 회복
         public const string IMG_USE = "1753892388978.png"; //사용
         public const string IMG_CLOSE = "1753892408517.png"; //X 버튼
+        public const string IMG_MISSION_UR_LEVEL5 = "mission_ur_level5.png";
     }
 }
