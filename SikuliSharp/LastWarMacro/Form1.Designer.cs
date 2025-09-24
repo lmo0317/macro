@@ -80,7 +80,7 @@
             // 
             // button1
             // 
-            button1.Location = new System.Drawing.Point(49, 50);
+            button1.Location = new System.Drawing.Point(73, 50);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(75, 23);
             button1.TabIndex = 4;
@@ -89,7 +89,7 @@
             // 
             // button2
             // 
-            button2.Location = new System.Drawing.Point(130, 50);
+            button2.Location = new System.Drawing.Point(154, 50);
             button2.Name = "button2";
             button2.Size = new System.Drawing.Size(75, 23);
             button2.TabIndex = 5;
@@ -98,7 +98,7 @@
             // 
             // MissionStopButton
             // 
-            MissionStopButton.Location = new System.Drawing.Point(130, 101);
+            MissionStopButton.Location = new System.Drawing.Point(154, 101);
             MissionStopButton.Name = "MissionStopButton";
             MissionStopButton.Size = new System.Drawing.Size(75, 23);
             MissionStopButton.TabIndex = 8;
@@ -108,7 +108,7 @@
             // 
             // MissionStartButton
             // 
-            MissionStartButton.Location = new System.Drawing.Point(49, 101);
+            MissionStartButton.Location = new System.Drawing.Point(73, 101);
             MissionStartButton.Name = "MissionStartButton";
             MissionStartButton.Size = new System.Drawing.Size(75, 23);
             MissionStartButton.TabIndex = 7;
