@@ -4,6 +4,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using SikuliSharp;
 
+using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+
 namespace LastWarMacro.Script
 {
     public class GoldZombieScript : IScript
@@ -27,7 +31,7 @@ namespace LastWarMacro.Script
                     catch (Exception e)
                     {
                         LogManager.Instance.WriteLog("중단됨 다시 시작");
-                        SikuliManager.Instance.Click(new Location(250, 450));
+                        Escape();
                         await Task.Delay(10000, token);
                         continue;
                     }
@@ -48,10 +52,18 @@ namespace LastWarMacro.Script
             _cts?.Cancel();
         }
 
-        private async Task Type(string key, int delayMs, CancellationToken token)
+        private void Escape()
         {
-            SikuliManager.Instance.Type(key);
-            await Task.Delay(delayMs, token);
+            if (WindowHelper.FocusProcess("LastWar"))
+            {
+                System.Threading.Thread.Sleep(200); // 포커스 안정화 대기
+                KeyboardInput.SendEsc();
+                Console.WriteLine("ESC 키 전송 완료");
+            }
+            else
+            {
+                Console.WriteLine("대상 프로세스를 찾을 수 없음");
+            }
         }
 
         private async Task RunScriptAsync(CancellationToken token)
