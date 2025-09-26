@@ -21,17 +21,22 @@ namespace LastWarMacro.Script
 
             try
             {
-                for (int i = 0; i < 10000; i++)
+                int count = 0;
+                while(true)
                 {
+                    count++;
+
                     try
                     {
-                        LogManager.Instance.WriteLog($"[GoldZombieScript] {i + 1}/1000 회차 실행 중...");
+                        LogManager.Instance.WriteLog($"[GoldZombieScript] {count} 회차 실행 중...");
                         await RunScriptAsync(token);
                     }
                     catch (Exception e)
                     {
                         LogManager.Instance.WriteLog("중단됨 다시 시작");
                         Escape();
+
+                        //1초대기
                         await Task.Delay(10000, token);
                         continue;
                     }
@@ -83,8 +88,8 @@ namespace LastWarMacro.Script
             LogManager.Instance.WriteLog("출정 버튼 클릭");
             await ClickAndDelayAsync(Consts.IMG_DEPLOY, 1000, token);
 
-            LogManager.Instance.WriteLog("30초 대기");
-            await Task.Delay(30000, token); // 마지막 대기
+            LogManager.Instance.WriteLog("1초 대기");
+            await Task.Delay(1000, token); // 마지막 대기
         }
 
         private async Task ClickAndDelayAsync(string imagePath, int delayMs, CancellationToken token)
